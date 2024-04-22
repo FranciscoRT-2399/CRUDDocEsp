@@ -1,0 +1,36 @@
+<div class="container">
+	<div class="card">
+		<div class="card-header text-center">
+			<h3>EDICION DE DOCTORES</h3>
+		</div>
+		<div class="card-body">
+				<div class="form-group">
+					<label for="id"> ID:  </label>
+					<input type="number" name="id" class="form-control" [(ngModel)]="doctor.idDoctor" readonly>
+				</div>
+
+				<div class="form-group">
+					<label for="nombre"> NOMBRE </label>
+					<input type="text" name="nombre" class="form-control" [(ngModel)]="doctor.nombre" readonly>
+				</div>
+
+				<div class="form-group">
+					<label for="especialidad"> ESPECIALIDAD: </label>
+					<input type="text" name="especialidad" class="form-control" [(ngModel)]="doctor.especialidad" readonly>
+				</div>
+
+				<div class="form-group">
+					<label for="dep"> DEPARTAMENTO: </label>
+					<input type="text" name="dep" class="form-control" [(ngModel)]="doctor.espId.nombre" readonly>
+				</div>
+
+				<br/>
+				<button class="btn btn-outline-dark" (click)="eliminar()">
+					ELIMINAR
+				</button>
+				<button class="btn btn-outline-dark" style="margin-left: 15px" (click)="cancelar()">
+					CANCELAR
+				</button>
+		</div>
+	</div>
+</div>

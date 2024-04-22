@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="card">
+		<div class="card-header text-center">
+			<h3>  ESPECIALIDADES </h3>
+		</div>
+		
+		<div class="card-body">
+			<table class="table">
+				<thead>
+					<tr style="text-align: center;">
+						<th> ID </th>
+						<th> NOMBRE </th>
+						<th> ACCIONES </th>
+					</tr>
+				</thead>				
+				<tbody class="table-group-divider">
+					@for (especialidad of especialidades; track especialidad.idEsp) {
+						<tr class="text-center">
+							<td> {{especialidad.idEsp}} </td>
+							<td> {{especialidad.nombre}} </td>
+							<td>
+								<button class="btn btn-outline-dark" (click)="editar(especialidad)"> EDITAR </button>
+								<button class="btn btn-outline-dark" (click)="eliminar(especialidad)" style="margin-left: 15px;"> ELIMINAR </button>
+							</td>
+						</tr>
+					}@empty {
+						<td colspan="3"> NO HAY REGISTROS </td>
+					}
+				</tbody>			
+			</table>
+		</div>
+	</div>
+</div>

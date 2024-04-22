@@ -1,0 +1,53 @@
+<div class="container">
+	<div class="card">
+		<div class="card-header text-center">
+			<h3>DOCTORES</h3>
+		</div>
+
+		<div class="input-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Ingresa la especialidad"
+        aria-label="Buscar"
+        [(ngModel)]="doctor.especialidad"
+        (ngModelChange)="buscarPorEspecialidad($event)"
+        aria-describedby="boton-buscar"
+      />
+    </div>
+
+		<div class="card-body">
+			<table class="table">
+				<thead>
+					<tr style="text-align: center;">
+						<th> ID </th>
+						<th> NOMBRE </th>
+						<th> ESPECIALIDAD </th>
+						<th> DEPARTAMENTO </th>
+						<th> ACCIONES </th>
+					</tr>
+				</thead>
+				<tbody class="table-group-divider">
+					@for (doctor of doctores; track doctor.idDoctor) {
+					<tr>
+						<td>{{doctor.idDoctor}}</td>
+						<td>{{doctor.nombre}}</td>
+						<td>{{doctor.especialidad}}</td>
+						<td>{{doctor.espId.nombre}}</td>
+						<td>
+							<button class="btn btn-outline-dark" (click)="editar(doctor)">
+								EDITAR
+							</button>
+							<button class="btn btn-outline-dark" (click)="eliminar(doctor)" style="margin-left: 15px">
+								ELIMINAR
+							</button>
+						</td>
+					</tr>
+					}@empty {
+						<td colspan="5" style="text-align: center;"> NO EXISTEN REGISTROS </td>
+					}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

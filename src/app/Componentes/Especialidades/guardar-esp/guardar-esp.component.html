@@ -1,0 +1,22 @@
+<div class="container">
+	<div class="card">
+		<div class="card-header text-center">
+			<h2> REGISTRO DE ESPECIALIDADES</h2>
+		</div>
+		<div class="card-body">
+			<form>
+				<div class="form-group">
+					<label for="id"> ID: </label>
+					<input type="number" name="id" class="form-control" [(ngModel)]="especialidad.idEsp">
+				</div>
+				<div class="form-group">
+					<label for="nombre"> NOMBRE </label>
+					<input type="text" name="NOMBRE" class="form-control" [(ngModel)]="especialidad.nombre">
+				</div>
+				<br>
+				<button class="btn btn-outline-dark" (click)="guardar()"> GUARDAR </button>
+				<button class="btn btn-outline-dark" (click)="cancelar()" style="margin-left: 15px;"> CANCELAR </button>
+			</form>
+		</div>
+	</div>
+</div>
